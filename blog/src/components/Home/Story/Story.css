@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: burlywood;
+  text-decoration: none;
+}
+
+.article-about {
+  white-space: pre-line;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.article-author {
+  width: 30px;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.article-metadata p:hover {
+  color: burlywood;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.likes-dislikes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.likes-dislikes i{
+  margin-right: 20px;
+  color: #433F40;
+}
+
+.likes-dislikes i:hover {
+  color: burlywood;
+  cursor: pointer;
+}

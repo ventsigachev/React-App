@@ -1,7 +1,75 @@
+import "./Contact.css";
+
 const Contact = () => {
-    return (
-        <div>Contact</div>
-    )
-}
+  return (
+    <form method="post">
+      <label for="first_name">
+        Your First Name<span>*</span>
+      </label>
+      <input
+        type="text"
+        id="first_name"
+        name="first_name"
+        placeholder="Enter Your first name here"
+        required
+      />
+
+      <label for="last_name">
+        Your Last Name<span>*</span>
+      </label>
+      <input
+        type="text"
+        id="last_name"
+        name="last_name"
+        placeholder="Enter Your last name here"
+        required
+      />
+
+      <label for="email">
+        Your Email Address<span>*</span>
+      </label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Enter Your email address here"
+        required
+      />
+
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="blank">------------</option>
+        <option value="bulgaria">BULGARIA</option>
+        <option value="usa">GERMANY</option>
+        <option value="usa">USA</option>
+      </select>
+
+      <label for="subject">
+        Your Subject<span>*</span>
+      </label>
+      <input
+        type="text"
+        id="subject"
+        name="subject"
+        placeholder="Enter Your subject here"
+        required
+      />
+
+      <label for="message">
+        Message<span>*</span>
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Write something.."
+        required
+      ></textarea>
+
+      <button class="btn btn-success" type="submit">
+        Send Email
+      </button>
+    </form>
+  );
+};
 
 export default Contact;

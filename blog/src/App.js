@@ -11,6 +11,7 @@ import Profile from "./components/Profile";
 import LogIn from "./components/LogIn";
 import LogOut from "./components/LogOut";
 import Register from "./components/Register";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }
