@@ -18,14 +18,14 @@ const Story = ({ story }) => {
           <small className="text-muted">{story.date}</small>
         </div>
         <h2>
-          <a className="article-title" href="{% url 'story detail' story.id %}">
+          <a className="article-title" href="{'story detail' story.id}">
             {story.title}
           </a>
         </h2>
         <div className="article-about">
           <p>{story.about}</p>
           <section className="likes-dislikes">
-            <i onClick={() => setLikes(prevLikes => prevLikes + 1)}class="fas fa-thumbs-up">{likes}</i>
+            <i onClick={() => setLikes(prevLikes => prevLikes + 1)} class="fas fa-thumbs-up">{likes}</i>
             <i onClick={() => setDislikes(prevDislikes => prevDislikes - 1)} class="fas fa-thumbs-down">{dislikes}</i>
           </section>
         </div>
