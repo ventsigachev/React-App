@@ -1,8 +1,13 @@
 import "./Story.css";
+import {useState} from 'react';
 
 const Story = ({ story }) => {
 
-  
+  let likesCount = story.likes;
+  const [likes, setLikes] = useState(likesCount);
+
+  let dislikesCount = story.dislikes;
+  const [dislikes, setDislikes] = useState(dislikesCount)
 
   return (
     <article className="story content-section">
@@ -20,8 +25,8 @@ const Story = ({ story }) => {
         <div className="article-about">
           <p>{story.about}</p>
           <section className="likes-dislikes">
-            <i class="fas fa-thumbs-up">{story.likes}</i>
-            <i class="fas fa-thumbs-down">{story.dislikes}</i>
+            <i onClick={() => setLikes(prevLikes => prevLikes + 1)}class="fas fa-thumbs-up">{likes}</i>
+            <i onClick={() => setDislikes(prevDislikes => prevDislikes - 1)} class="fas fa-thumbs-down">{dislikes}</i>
           </section>
         </div>
       </div>
