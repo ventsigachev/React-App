@@ -1,14 +1,15 @@
 import './Navigation.css';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
     return (
         <div className=" navbar" id="navbar-brand-centered">
                 <ul className="nav navbar-nav navbar-left">
                 
-                        <li><a href="{% url 'story home' %}">HOME</a></li>
-                        <li><a href="{% url 'story about' %}">About Us</a></li>
-                        <li><a href="{% url 'story contact' %}">Contact Us</a></li>
-                        <li><a href="{% url 'story create' %}">WriteStory</a></li>      
+                        <li><Link to="/home">HOME</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/contact">Contact Us</Link></li>
+                        <li><Link to="/add-story">WriteStory</Link></li>      
                         
                 </ul>
 
@@ -16,11 +17,11 @@ const Navigation = () => {
 
                 <ul className="nav navbar-nav navbar-right">
                     
-                        <li><a href="{% url 'admin:index' %}">My Stories</a></li>
-                        <li><a href="{% url 'user profile' %}">Hello, username!</a></li>
-                        <li><a href="{% url 'logout' %}">Sign Out</a></li>               
-                        <li><a href="{% url 'login' %}">Sign In</a></li>
-                        <li><a href="{% url 'user signup' %}">Sign Up</a></li>
+                        <li><Link to="/user-stories">My Stories</Link></li>
+                        <li><Link to="/profile">Hello, username!</Link></li>
+                        <li><Link to="/logout">Sign Out</Link></li>               
+                        <li><Link to="/login">Sign In</Link></li>
+                        <li><Link to="/register">Sign Up</Link></li>
 
                 </ul>
             </div>
