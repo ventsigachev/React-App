@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+
+.nav-text {
+    font-family: 'Comforter Brush';
+    color: antiquewhite;
+    font-size: 3em;
+    font-weight: bolder;
+}
+
+.navbar {
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gray;
+    
+}
+
+.navbar .nav  li{
+    list-style: none;
+    margin-right: 20px;
+}
+
+.navbar .nav  li a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .nav  li a:hover{
+    text-decoration: underline;
+    font-size: 1.2em;
+}
+
+.navbar-left {
+    display:flex;
+    padding-left: 20px;
+}
+
+.navbar-right {
+    display:flex;
+    padding-right: 20px;
+}
