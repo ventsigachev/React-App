@@ -12,7 +12,7 @@ const Contact = () => {
       }, (error) => {
           console.log(error.text);
       });
-      console.log(e.target);
+
       e.target.reset();
   };
 
