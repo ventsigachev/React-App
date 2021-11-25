@@ -1,9 +1,24 @@
 import "./Contact.css";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_2uhf7gm', 'template_3z9c2tn', e.target, 'user_J06jEk0vjNA8YHBchFs2U')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      console.log(e.target);
+      e.target.reset();
+  };
+
   return (
-    <form method="post">
-      <label for="first_name">
+    <form onSubmit={sendEmail}>
+      <label htmlFor="first_name">
         Your First Name<span>*</span>
       </label>
       <input
@@ -14,7 +29,7 @@ const Contact = () => {
         required
       />
 
-      <label for="last_name">
+      <label htmlFor="last_name">
         Your Last Name<span>*</span>
       </label>
       <input
@@ -25,7 +40,7 @@ const Contact = () => {
         required
       />
 
-      <label for="email">
+      <label htmlFor="email">
         Your Email Address<span>*</span>
       </label>
       <input
@@ -36,15 +51,15 @@ const Contact = () => {
         required
       />
 
-      <label for="country">Country</label>
+      <label htmlFor="country">Country</label>
       <select id="country" name="country">
         <option value="blank">------------</option>
-        <option value="bulgaria">BULGARIA</option>
-        <option value="usa">GERMANY</option>
-        <option value="usa">USA</option>
+        <option value="Bulgaria">BULGARIA</option>
+        <option value="Germany">GERMANY</option>
+        <option value="USA">USA</option>
       </select>
 
-      <label for="subject">
+      <label htmlFor="subject">
         Your Subject<span>*</span>
       </label>
       <input
@@ -55,7 +70,7 @@ const Contact = () => {
         required
       />
 
-      <label for="message">
+      <label htmlFor="message">
         Message<span>*</span>
       </label>
       <textarea
@@ -65,7 +80,7 @@ const Contact = () => {
         required
       ></textarea>
 
-      <button class="btn btn-success" type="submit">
+      <button className="btn btn-success" type="submit">
         Send Email
       </button>
     </form>
