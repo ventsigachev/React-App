@@ -29,7 +29,7 @@
 
 .navbar .nav  li a:hover{
     text-decoration: underline;
-    font-size: 1.2em;
+    /* font-size: 1.2em; */
 }
 
 .navbar-left {
