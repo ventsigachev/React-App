@@ -1,6 +1,7 @@
 import "./Create.css";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import moment from "moment";
 
 const API_URL = "http://localhost:3030/jsonstore";
 
@@ -17,8 +18,9 @@ const Create = () => {
     const author = "ven";
     const likes = 0;
     const dislikes = 0;
+    const date = moment().format("DD-MM-YYYY HH:mm");
 
-    const story = { title, about, description, author, likes, dislikes };
+    const story = { title, about, date, description, author, likes, dislikes };
 
     setIsPending(true);
 
