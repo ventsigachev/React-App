@@ -52,7 +52,7 @@ const Details = () => {
         <Link className="btn" to="/">
           Edit Story
         </Link>
-        <button onClick={deleteHandle} className="btn">
+        <button onClick={deleteHandle} className="btn delete">
           Delete Story
         </button>
       </div>
