@@ -8,7 +8,7 @@
 
 .main {
     width: 1600px;
-    height: 100vh;
+    height: auto;
     background-color: #433F40;
     margin: 0 auto;
     padding: 80px;

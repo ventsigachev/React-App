@@ -1,21 +1,32 @@
 import "./Details.css";
 
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const API_URL = "http://localhost:3030/jsonstore";
 
 const Details = () => {
-  const id = useParams().storyId;
+  const { storyId } = useParams();
+  const navigate = useNavigate();
   
   const [story, setStory] = useState({});
 
   useEffect(() => {
-    fetch(`${API_URL}/story/${id}`)
+    fetch(`${API_URL}/story/${storyId}`)
       .then((res) => res.json())
       .then((data) => setStory(data));
-  }, [id]);
+  }, [storyId]);
 
+  const deleteHandle = () => {
+
+    fetch(`${API_URL}/story/${storyId}`, {
+      method: 'DELETE'
+    })
+    .then(() => {
+        navigate("/home")
+    })
+
+  }
 
   return (
     <>
@@ -41,9 +52,9 @@ const Details = () => {
         <Link className="btn" to="/">
           Edit Story
         </Link>
-        <Link className="btn" to="/">
+        <button onClick={deleteHandle} className="btn">
           Delete Story
-        </Link>
+        </button>
       </div>
     </>
   );
