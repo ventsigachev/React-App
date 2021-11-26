@@ -32,6 +32,10 @@
     /* font-size: 1.2em; */
 }
 
+.navbar .nav  li a:active{
+    color: burlywood;
+}
+
 .navbar-left {
     display:flex;
     padding-left: 20px;

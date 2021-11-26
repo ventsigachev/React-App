@@ -1,5 +1,6 @@
 import "./Story.css";
 import {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 const Story = ({ story }) => {
 
@@ -18,9 +19,9 @@ const Story = ({ story }) => {
           <small className="text-muted">{story.date}</small>
         </div>
         <h2>
-          <a className="article-title" href="{'story detail' story.id}">
+          <Link className="article-title" to={`/details/${story._id}`}>
             {story.title}
-          </a>
+          </Link>
         </h2>
         <div className="article-about">
           <p>{story.about}</p>
