@@ -13,6 +13,7 @@ import LogOut from "./components/LogOut";
 import Register from "./components/Register";
 import Footer from "./components/Footer";
 import Details from "./components/Details";
+import Edit from "./components/Edit";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={ <Landing /> }/>
           <Route path="/home" element={ <Home /> }/>
           <Route path="/details/:storyId" element={ <Details />}/>
+          <Route path="/edit/:storyId" element={ <Edit />}/>
           <Route path="/about" element={ <About /> }/>
           <Route path="/contact" element={ <Contact /> }/>
           <Route path="/add-story" element={ <Create /> }/>

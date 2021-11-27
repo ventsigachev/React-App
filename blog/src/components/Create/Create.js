@@ -47,6 +47,7 @@ const Create = () => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         required
+        autoFocus={true}
       />
       <label htmlFor="about">Your Story About</label>
       <input

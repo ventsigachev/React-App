@@ -49,7 +49,7 @@ const Details = () => {
           </section>
       </article>
       <div>
-        <Link className="btn" to="/">
+        <Link className="btn" to={`/edit/${storyId}`}>
           Edit Story
         </Link>
         <button onClick={deleteHandle} className="btn delete">

@@ -27,6 +27,7 @@ const Contact = () => {
         name="first_name"
         placeholder="Enter Your first name here"
         required
+        autoFocus={true}
       />
 
       <label htmlFor="last_name">
@@ -80,7 +81,7 @@ const Contact = () => {
         required
       ></textarea>
 
-      <button className="btn btn-success" type="submit">
+      <button className="btn" type="submit">
         Send Email
       </button>
     </form>
