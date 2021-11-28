@@ -89,3 +89,9 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+.registerButton:focus {
+  outline: none;
+  background-color: burlywood;
+  border: 1px solid black;
+}

@@ -72,3 +72,9 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+.regButton:focus {
+  outline: none;
+  border: 1px solid black;
+  background-color: burlywood;
+}
