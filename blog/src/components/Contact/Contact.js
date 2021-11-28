@@ -19,9 +19,10 @@ const Contact = () => {
   return (
     <form onSubmit={sendEmail}>
       <label htmlFor="first_name">
-        Your First Name<span>*</span>
+        Your First Name<span className="contactSpan">*</span>
       </label>
       <input
+      className="contactInput"
         type="text"
         id="first_name"
         name="first_name"
@@ -31,9 +32,10 @@ const Contact = () => {
       />
 
       <label htmlFor="last_name">
-        Your Last Name<span>*</span>
+        Your Last Name<span className="contactSpan">*</span>
       </label>
       <input
+      className="contactInput"
         type="text"
         id="last_name"
         name="last_name"
@@ -42,9 +44,10 @@ const Contact = () => {
       />
 
       <label htmlFor="email">
-        Your Email Address<span>*</span>
+        Your Email Address<span className="contactSpan">*</span>
       </label>
       <input
+      className="contactInput"
         type="text"
         id="email"
         name="email"
@@ -53,7 +56,7 @@ const Contact = () => {
       />
 
       <label htmlFor="country">Country</label>
-      <select id="country" name="country">
+      <select  className="contactInput" id="country" name="country">
         <option value="blank">------------</option>
         <option value="Bulgaria">BULGARIA</option>
         <option value="Germany">GERMANY</option>
@@ -61,9 +64,10 @@ const Contact = () => {
       </select>
 
       <label htmlFor="subject">
-        Your Subject<span>*</span>
+        Your Subject<span className="contactSpan">*</span>
       </label>
       <input
+      className="contactInput"
         type="text"
         id="subject"
         name="subject"
@@ -72,9 +76,10 @@ const Contact = () => {
       />
 
       <label htmlFor="message">
-        Message<span>*</span>
+        Message<span className="contactSpan">*</span>
       </label>
       <textarea
+      className="contactInput"
         id="message"
         name="message"
         placeholder="Write something.."

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap");
+
+.login {
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid burlywood;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.loginWrapper {
+  width: 70%;
+  height: 70%;
+  display: flex;
+}
+
+.loginLeft,
+.loginRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loginLogo {
+  font-family: "Comforter Brush";
+  font-size: 50px;
+  font-weight: 800;
+  color: burlywood;
+  margin-bottom: 10px;
+}
+
+.loginDesc {
+  font-size: 24px;
+  color: wheat;
+}
+
+.loginBox {
+  height: 300px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.loginInput {
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  font-size: 18px;
+  padding-left: 20px;
+}
+
+.loginInput:focus {
+  outline: none;
+  background-color: burlywood;
+  color: black;
+}
+
+.loginButton {
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.loginButton:focus {
+  outline: none;
+  background-color: burlywood;
+}
+
+.loginRegisterButton {
+  width: 60%;
+  align-self: center;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: #42b72a;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}

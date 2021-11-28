@@ -8,9 +8,9 @@ import Contact from "./components/Contact";
 import Create from "./components/Create";
 import MyStories from "./components/MyStories";
 import Profile from "./components/Profile";
-import LogIn from "./components/LogIn";
-import LogOut from "./components/LogOut";
-import Register from "./components/Register";
+import SignIn from "./components/SignIn";
+import SignOut from "./components/SignOut";
+import SignUp from "./components/SignUp";
 import Footer from "./components/Footer";
 import Details from "./components/Details";
 import Edit from "./components/Edit";
@@ -32,9 +32,9 @@ function App() {
           <Route path="/add-story" element={ <Create /> }/>
           <Route path="/user-stories" element={ <MyStories /> }/>
           <Route path="/profile" element={ <Profile /> }/>
-          <Route path="/login" element={ <LogIn /> }/>
-          <Route path="/logout" element={ <LogOut /> }/>
-          <Route path="/register" element={ <Register /> }/>
+          <Route path="/login" element={ <SignIn /> }/>
+          <Route path="/logout" element={ <SignOut /> }/>
+          <Route path="/register" element={ <SignUp /> }/>
           
         </Routes>
       </main>
