@@ -52,7 +52,7 @@ const Details = () => {
         <Link className="btn" to={`/edit/${storyId}`}>
           Edit Story
         </Link>
-        <button onClick={deleteHandle} className="btn delete">
+        <button onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) deleteHandle()}} className="btn delete">
           Delete Story
         </button>
       </div>
