@@ -2,8 +2,6 @@ import "./SignIn.css";
 
 const SignIn = () => {
   return (
-    <h1>
-      {" "}
       <div className="login">
         <div className="loginWrapper">
           <div className="loginLeft">
@@ -28,16 +26,15 @@ const SignIn = () => {
                 required
               />
               <button className="loginButton" type="submit">
-                Log In
+                Log into Account
               </button>
-              <button className="loginRegisterButton">
-                Create a New Account
+              <button className="registerButton">
+                Create New Account
               </button>
             </form>
           </div>
         </div>
       </div>
-    </h1>
   );
 };
 

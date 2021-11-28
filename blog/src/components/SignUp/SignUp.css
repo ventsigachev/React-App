@@ -1,5 +1,74 @@
-.landing {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@import url("https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap");
+
+.reg {
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid burlywood;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.regWrapper {
+  width: 70%;
+  height: 70%;
+  display: flex;
+}
+
+.regLeft,
+.regRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.regLogo {
+  font-family: "Comforter Brush";
+  font-size: 50px;
+  font-weight: 800;
+  color: burlywood;
+  margin-bottom: 10px;
+}
+
+.regDesc {
+  font-size: 24px;
+  color: wheat;
+}
+
+.regBox {
+  height: 400px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.regInput {
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  font-size: 18px;
+  padding-left: 20px;
+}
+
+.regInput:focus {
+  outline: none;
+  background-color: burlywood;
+}
+
+.regButton {
+  width: 60%;
+  align-self: center;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: #42b72a;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
 }
