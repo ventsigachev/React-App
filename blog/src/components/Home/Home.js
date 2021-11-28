@@ -21,7 +21,7 @@ const Home = () => {
         <Story key={story._id} story={story} />
       ))}
     </div> : 
-    <div className="not-story">
+    <div className="no-story">
        <p>There are no stories to display</p>
         
     </div>
