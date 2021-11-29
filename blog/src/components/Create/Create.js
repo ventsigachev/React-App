@@ -41,6 +41,7 @@ const Create = () => {
     <form onSubmit={submitHandler} method="POST">
       <label htmlFor="title">Your Story Title</label>
       <input
+      className="contactInput"
         type="text"
         name="title"
         id="title"
@@ -51,6 +52,7 @@ const Create = () => {
       />
       <label htmlFor="about">Your Story About</label>
       <input
+      className="contactInput"
         type="text"
         name="about"
         id="about"
@@ -60,6 +62,7 @@ const Create = () => {
       />
       <label htmlFor="description">Your Story</label>
       <textarea
+      className="contactInput"
         type="text"
         name="description"
         id="description"

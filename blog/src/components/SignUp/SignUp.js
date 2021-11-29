@@ -1,4 +1,5 @@
 import "./SignUp.css";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   return (
@@ -39,7 +40,9 @@ const SignUp = () => {
             <button className="regButton" type="submit">
               Create Account
             </button>
-            <button className="loginButton">Log into Account</button>
+            <Link to="/login" className="logBtn">
+              Log into Account
+            </Link>
           </form>
         </div>
       </div>
