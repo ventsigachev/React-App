@@ -9,7 +9,7 @@ const Edit = () => {
   const { storyId } = useParams();
   const navigate = useNavigate();
 
-  const [story, setStory] = useState({});
+  // const [story, setStory] = useState({});
   const [title, setTitle] = useState("");
   const [about, setAbout] = useState();
   const [description, setDescription] = useState();
@@ -19,7 +19,7 @@ const Edit = () => {
     const getStory = async () => {
       const res = await fetch(`${API_URL}/story/${storyId}`);
       const data = await res.json();
-      setStory(data);
+      // setStory(data);
       setTitle(data.title);
       setAbout(data.about);
       setDescription(data.description);
