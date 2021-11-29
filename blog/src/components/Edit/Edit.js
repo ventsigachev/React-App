@@ -11,8 +11,8 @@ const Edit = () => {
 
   // const [story, setStory] = useState({});
   const [title, setTitle] = useState("");
-  const [about, setAbout] = useState();
-  const [description, setDescription] = useState();
+  const [about, setAbout] = useState("");
+  const [description, setDescription] = useState("");
   const [isPending, setIsPending] = useState(false);
 
   useEffect(() => {
