@@ -63,7 +63,7 @@ const Edit = () => {
     <form onSubmit={submitHandler}>
       <label htmlFor="title">Your Story Title</label>
       <input
-        className="edit-text"
+        className="contactInput"
         type="text"
         name="title"
         id="title"
@@ -74,7 +74,7 @@ const Edit = () => {
       />
       <label htmlFor="about">Your Story About</label>
       <input
-        className="edit-text"
+        className="contactInput"
         type="text"
         name="about"
         id="about"
@@ -84,7 +84,7 @@ const Edit = () => {
       />
       <label htmlFor="description">Your Story</label>
       <textarea
-        className="edit-text textarea"
+        className="contactInput textarea"
         type="text"
         name="description"
         id="description"
