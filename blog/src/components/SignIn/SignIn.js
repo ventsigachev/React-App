@@ -19,26 +19,31 @@ const SignIn = () => {
     e.preventDefault();
 
     try {
+
       const res = await fetch(`${LOG_API}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
+
       });
 
       const data = await res.json();
-      console.log(data);
-
+    
       if (!res.ok) {
-        throw new Error();
+        throw new Error(data.message);
       }
 
       setErr(null);
-      setMessage("Successfully SignIn! You will be redirect to Home Page!");
+      setMessage("Successfully Signed In! You will be redirect to Home Page!");
       setTimeout(() => {
         navigate("/home");
-      }, 7000);
+      }, 5000);
+
     } catch (error) {
-      setErr(error);
+
+      console.log(error)
+      setErr(`${error.message}! Please, try again!`);
+
     }
   };
 
