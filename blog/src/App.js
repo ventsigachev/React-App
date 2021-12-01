@@ -16,26 +16,26 @@ import Details from "./components/Details";
 import Edit from "./components/Edit";
 
 function App() {
+  const user = { boolean: false, username: "ven" };
+
   return (
     <div className="App">
-      <Navigation />
+      <Navigation user={user} />
 
       <main className="main">
         <Routes>
-
-          <Route path="/" element={ <Landing /> }/>
-          <Route path="/home" element={ <Home /> }/>
-          <Route path="/details/:storyId" element={ <Details />}/>
-          <Route path="/edit/:storyId" element={ <Edit />}/>
-          <Route path="/about" element={ <About /> }/>
-          <Route path="/contact" element={ <Contact /> }/>
-          <Route path="/add-story" element={ <Create /> }/>
-          <Route path="/user-stories" element={ <MyStories /> }/>
-          <Route path="/profile" element={ <Profile /> }/>
-          <Route path="/login" element={ <SignIn /> }/>
-          <Route path="/logout" element={ <SignOut /> }/>
-          <Route path="/register" element={ <SignUp /> }/>
-          
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/details/:storyId" element={<Details />} />
+          <Route path="/edit/:storyId" element={<Edit />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/add-story" element={<Create />} />
+          <Route path="/user-stories" element={<MyStories />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<SignIn />} />
+          <Route path="/logout" element={<SignOut />} />
+          <Route path="/register" element={<SignUp />} />
         </Routes>
       </main>
       <Footer />
