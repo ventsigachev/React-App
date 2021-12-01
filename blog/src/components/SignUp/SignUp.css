@@ -79,6 +79,12 @@
   background-color: burlywood;
 }
 
+.regButton:hover {
+  outline: none;
+  border: 1px solid black;
+  background-color: burlywood;
+}
+
 .logBtn {
   width: 60%;
   align-self: center;
@@ -94,5 +100,9 @@
 }
 
 .logBtn:focus {
+  border: 2px solid black;
+}
+
+.logBtn:hover {
   border: 2px solid black;
 }

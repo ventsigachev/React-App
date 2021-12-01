@@ -33,7 +33,7 @@ const SignUp = () => {
             />
             <input
               className="regInput"
-              placeholder="Password Again"
+              placeholder="Password Confirmation"
               type="password"
               required
             />

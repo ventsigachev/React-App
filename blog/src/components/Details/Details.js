@@ -17,7 +17,7 @@ const Details = () => {
       .then((data) => setStory(data));
   }, [storyId]);
 
-  const deleteHandle = () => {
+  const deleteHandler = () => {
 
     fetch(`${API_URL}/story/${storyId}`, {
       method: 'DELETE'
@@ -52,7 +52,7 @@ const Details = () => {
         <Link className="btn" to={`/edit/${storyId}`}>
           Edit Story
         </Link>
-        <button onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) deleteHandle()}} className="btn delete">
+        <button onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) deleteHandler()}} className="btn delete">
           Delete Story
         </button>
       </div>

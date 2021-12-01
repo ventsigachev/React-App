@@ -77,6 +77,11 @@
   background-color: burlywood;
 }
 
+.loginButton:hover {
+  outline: none;
+  background-color: burlywood;
+}
+
 .regBtn {
   width: 60%;
   align-self: center;
@@ -93,6 +98,11 @@
 }
 
 .regBtn:focus {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.regBtn:hover {
   border: 2px solid black;
   padding: 10px;
 }
