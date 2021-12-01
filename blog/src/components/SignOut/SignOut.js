@@ -10,8 +10,10 @@ const SignOut = () => {
           <p className="msg1">Are You leaving, really?</p>
         </div>
         <div className="buttons">
-          <Link to="/" className="bt exit">Leave</Link>
-          <Link to="#" className="bt back">go back</Link>
+          <Link to="/" className="bt exit" onClick={() => {
+            // localStorage.removeItem(user)
+          }}>Leave</Link>
+          <Link to="/home" className="bt back">go back</Link>
         </div>
       </div>
     </div>
