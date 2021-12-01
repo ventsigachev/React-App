@@ -24,7 +24,9 @@ const SignUp = () => {
       window.alert("Please, write a valid email address!")
     }
 
-
+    if (password !== confirmPassword) {
+      window.alert("Passwords do not match! Please, enter the same password in the Password Confirmation field!")
+    }
 
     e.target.reset();
   }
