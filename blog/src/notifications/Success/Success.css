@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+
+.message {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: burlywood;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.mMessage {
+    color: green;
+    font-family: "Comforter Brush";
+    font-size: 2.5em;
+    text-align: center;
+    text-decoration: underline;
+}
