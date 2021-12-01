@@ -18,15 +18,10 @@ const SignUp = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-      const isThere = domains.some(d => email.includes(d));
-    console.log(isThere)
-  
+    const isThere = domains.some(d => email.includes(d));  
 
     if (!email.includes("@") || !isThere) {
       window.alert("Please, write a valid email address!")
-      console.log("error")
-    }else {
-      console.log("success")
     }
 
 
