@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {useState} from "react";
 
 const REG_API = "http://localhost:3030/users/register";
+const domains = [".com", ".bg", ".net", ".org"]
 
 const SignUp = () => {
 
@@ -17,7 +18,18 @@ const SignUp = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    console.log(email);
+      const isThere = domains.some(d => email.includes(d));
+    console.log(isThere)
+  
+
+    if (!email.includes("@") || !isThere) {
+      window.alert("Please, write a valid email address!")
+      console.log("error")
+    }else {
+      console.log("success")
+    }
+
+
 
     e.target.reset();
   }
