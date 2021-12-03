@@ -27,7 +27,8 @@ const Details = () => {
   const deleteHandler = () => {
 
     fetch(`${API_URL}/story/${storyId}`, {
-      method: 'DELETE'
+      method: 'DELETE',
+      headers: {"X-Authorization": user.accessToken} 
     })
     .then(() => {
         navigate("/home")
