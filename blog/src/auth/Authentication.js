@@ -1,17 +1,11 @@
 import React, { useState } from "react";
+import INITIAL_STATE from "./states";
 
-const initialState = {
-  username: "",
-  email: "",
-  avatar: "",
-  _id: "",
-  accessToken: "",
-};
 
 export const userContext = React.createContext();
 
 const Store = ({ children }) => {
-  const [userData, setUserData] = useState(initialState);
+  const [userData, setUserData] = useState(INITIAL_STATE);
 
   return <userContext.Provider value={[userData, setUserData]}>{children}</userContext.Provider>;
 };

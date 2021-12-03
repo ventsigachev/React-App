@@ -26,8 +26,8 @@ const Story = ({ story }) => {
         <div className="article-about">
           <p>{story.about}</p>
           <section className="likes-dislikes">
-            <i onClick={() => setLikes(prevLikes => prevLikes + 1)} class="fas fa-thumbs-up">{likes}</i>
-            <i onClick={() => setDislikes(prevDislikes => prevDislikes - 1)} class="fas fa-thumbs-down">{dislikes}</i>
+            <i onClick={() => setLikes(prevLikes => prevLikes + 1)} className="fas fa-thumbs-up">{likes}</i>
+            <i onClick={() => setDislikes(prevDislikes => prevDislikes - 1)} className="fas fa-thumbs-down">{dislikes}</i>
           </section>
         </div>
       </div>
