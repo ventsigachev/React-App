@@ -14,7 +14,7 @@ const SignIn = () => {
   const [err, setErr] = useState(null);
   const [ message, setMessage] = useState(null);
   const navigate = useNavigate();
-  const setUserData = useContext(userContext)[1];
+  const loginData = useContext(userContext)[1];
 
   const user = { email, password };
 
@@ -36,8 +36,7 @@ const SignIn = () => {
         throw new Error(data.message);
       }
 
-      console.log(data);
-      setUserData(data);
+      loginData(data);
 
       setErr(null);
       setMessage("Successfully Signed In! You will be redirect to Home Page!");
