@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Errors from "../../notifications/Errors";
 import Success from "../../notifications/Success";
+import { userContext } from "../../auth/Authentication";
+import { useContext } from "react";
 
 const LOG_API = "http://localhost:3030/users/login";
 
@@ -12,6 +14,7 @@ const SignIn = () => {
   const [err, setErr] = useState(null);
   const [ message, setMessage] = useState(null);
   const navigate = useNavigate();
+  const [userData, setUserData] = useContext(userContext);
 
   const user = { email, password };
 
@@ -33,6 +36,10 @@ const SignIn = () => {
         throw new Error(data.message);
       }
 
+      console.log(data);
+      setUserData(data);
+      console.log(userData);
+
       setErr(null);
       setMessage("Successfully Signed In! You will be redirect to Home Page!");
       setTimeout(() => {
@@ -41,7 +48,6 @@ const SignIn = () => {
 
     } catch (error) {
 
-      console.log(error)
       setErr(`${error.message}! Please, try again!`);
 
     }
@@ -49,6 +55,11 @@ const SignIn = () => {
 
   return (
     <>
+    <p>{userData.email}</p>
+    <p>{userData.username}</p>
+    <p>{userData.accessToken}</p>
+    <p>{userData._id}</p>
+
     {message && <Success mes={message} />}
     {err && <Errors message={err} />}
       <div className="login">
