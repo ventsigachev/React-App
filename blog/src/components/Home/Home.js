@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Story from "./Story/Story";
 import "./Home.css";
 
-const API_URL = "http://localhost:3030/jsonstore";
+const API_URL = "http://localhost:3030/data";
 
 const Home = () => {
   const [story, setStory] = useState([]);

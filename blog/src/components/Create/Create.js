@@ -2,32 +2,41 @@ import "./Create.css";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import moment from "moment";
+import { userContext } from "../../auth/Authentication";
+import { useContext } from "react";
 
-const API_URL = "http://localhost:3030/jsonstore";
+
+const API_URL = "http://localhost:3030/data";
 
 const Create = () => {
   const [title, setTitle] = useState("");
   const [about, setAbout] = useState("");
   const [description, setDescription] = useState("");
   const [isPending, setIsPending] = useState(false);
+  const userData = useContext(userContext)[0];
 
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const author = "ven";
+    const authorName = userData.username;
+    const authorId = userData._id;
+    const authorAvatar = userData.avatar;
     const likes = 0;
     const dislikes = 0;
     const date = moment().format("DD-MM-YYYY HH:mm");
 
-    const story = { title, about, date, description, author, likes, dislikes };
+    const story = { title, about, date, description, authorName, authorId, authorAvatar, likes, dislikes };
 
     setIsPending(true);
 
     fetch(`${API_URL}/story`, {
 
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "X-Authorization" : userData.accessToken },
+        
         body: JSON.stringify(story)
 
     })

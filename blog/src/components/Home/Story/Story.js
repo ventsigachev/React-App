@@ -12,10 +12,10 @@ const Story = ({ story }) => {
 
   return (
     <article className="story content-section">
-      <img className="article-img" src="/images/default_pic.jpg" alt="img" />
+      <img className="article-img" src={story.authorAvatar} alt="img" />
       <div className="story-body">
         <div className="article-metadata">
-          <p className="article-author">{story.author}</p>
+          <p className="article-author">{story.authorName}</p>
           <small className="text-muted">{story.date}</small>
         </div>
         <h2>
