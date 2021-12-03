@@ -1,8 +1,11 @@
 import "./Navigation.css";
 import { Link } from "react-router-dom";
+import { userContext } from "../../auth/Authentication";
+import { useContext } from "react";
 
 const Navigation = ({ user }) => {
-  const isUser = user.boolean;
+  const userData = useContext(userContext)[0];
+  const isUser = userData.accessToken;
 
   return (
     <div className=" navbar" id="navbar-brand-centered">
@@ -35,7 +38,7 @@ const Navigation = ({ user }) => {
         )}
         {isUser && (
           <li>
-            <Link to="/profile">Hello, {user.username}!</Link>
+            <Link to="/profile">Hello, {userData.username}!</Link>
           </li>
         )}
         {isUser && (
