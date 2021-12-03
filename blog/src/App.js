@@ -16,7 +16,7 @@ import Details from "./components/Details";
 import Edit from "./components/Edit";
 
 function App() {
-  const user = { boolean: false, username: "ven" };
+  const user = { boolean: true, username: "ven" };
 
   return (
     <div className="App">

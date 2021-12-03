@@ -3,6 +3,8 @@ import Errors from "../../notifications/Errors";
 import Success from "../../notifications/Success";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { userContext } from "../../auth/Authentication";
+import { useContext } from "react";
 
 const REG_API = "http://localhost:3030/users/register";
 const domains = [".com", ".bg", ".net", ".org"];
@@ -15,6 +17,8 @@ const SignUp = () => {
   const [err, setErr] = useState(null);
   const [message, setMessage] = useState(null);
   const navigate = useNavigate();
+  const registerData = useContext(userContext)[1];
+
 
   const usernameHandler = (e) => {
     setUsername(e.target.value);
@@ -64,8 +68,8 @@ const SignUp = () => {
       }
 
       setErr(null);
-      console.log(data)
-      setMessage("Congratulation!Your account has been created! You will be redirect to Profile Page!");
+      registerData(data);
+      setMessage("Congratulations! Your account has been created! You will be redirect to Profile Page!");
       setTimeout(() => {
           navigate("/profile")
       }, 7000);

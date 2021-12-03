@@ -1,14 +1,11 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import Story from "./Story/Story";
 import "./Home.css";
-import { userContext } from "../../auth/Authentication";
 
 const API_URL = "http://localhost:3030/jsonstore";
 
 const Home = () => {
   const [story, setStory] = useState([]);
-  const userData = useContext(userContext)[0];
-
 
   useEffect(() => {
     fetch(`${API_URL}/story`)
@@ -18,10 +15,6 @@ const Home = () => {
 
   return story.length > 0 ? (
     <div className="story-list">
-      <p>{userData.email}</p>
-      <p>{userData.username}</p>
-      <p>{userData.accessToken}</p>
-      <p>{userData._id}</p>
       {story.map((story) => (
         <Story key={story._id} story={story} />
       ))}
