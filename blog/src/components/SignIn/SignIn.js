@@ -14,7 +14,7 @@ const SignIn = () => {
   const [err, setErr] = useState(null);
   const [ message, setMessage] = useState(null);
   const navigate = useNavigate();
-  const [userData, setUserData] = useContext(userContext);
+  const setUserData = useContext(userContext)[1];
 
   const user = { email, password };
 
@@ -38,7 +38,6 @@ const SignIn = () => {
 
       console.log(data);
       setUserData(data);
-      console.log(userData);
 
       setErr(null);
       setMessage("Successfully Signed In! You will be redirect to Home Page!");
@@ -55,11 +54,6 @@ const SignIn = () => {
 
   return (
     <>
-    <p>{userData.email}</p>
-    <p>{userData.username}</p>
-    <p>{userData.accessToken}</p>
-    <p>{userData._id}</p>
-
     {message && <Success mes={message} />}
     {err && <Errors message={err} />}
       <div className="login">
