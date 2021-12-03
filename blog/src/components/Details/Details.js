@@ -10,10 +10,11 @@ const API_URL = "http://localhost:3030/data";
 const Details = () => {
   const { storyId } = useParams();
   const navigate = useNavigate();
-  const user = useContext(userContext)[0];
-
-  
+  const user = useContext(userContext)[0]; 
   const [story, setStory] = useState({});
+
+  const [likes, setLikes] = useState(0);
+  const [dislikes, setDislikes] = useState(0)
 
   const isAuthor = story.authorId === user._id ? true : false;
 
@@ -50,8 +51,8 @@ const Details = () => {
           <h3>{story.description}</h3>
         </div>
         {!isAuthor && <section className="details-likes-dislikes">
-            <p >Likes: {story.likes}</p>
-            <p >Dislikes: {story.dislikes}</p>
+            <p onClick={() => setLikes(prevLikes => prevLikes + 1)}>Likes: {likes}</p>
+            <p onClick={() => setDislikes(prevDislikes => prevDislikes - 1)}>Dislikes: {dislikes}</p>
           </section>}
       </article>
       {isAuthor && <div>

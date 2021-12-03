@@ -71,6 +71,7 @@
 .details-likes-dislikes p:hover {
   color: burlywood;
   cursor: pointer;
+  font-weight: bolder;
 }
 
 .delete:hover {
