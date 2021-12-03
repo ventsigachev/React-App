@@ -5,7 +5,7 @@ import { useContext } from "react";
 import INITIAL_STATE from "../../auth/states";
 
 const SignOut = () => {
-  const delUserData = useContext(userContext)[1];
+  const [userData, delUserData] = useContext(userContext);
 
   return (
     <div className="logout">
@@ -20,6 +20,10 @@ const SignOut = () => {
             className="bt exit"
             onClick={() => {
               delUserData(INITIAL_STATE);
+              fetch("http://localhost:3030/users/logout", {
+                method: "GET",
+                headers: {"X-Authorization": userData.accessToken}
+              })
             }}
           >
             Leave
