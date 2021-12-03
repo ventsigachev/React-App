@@ -2,14 +2,20 @@ import "./Details.css";
 
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { userContext } from "../../auth/Authentication";
+import { useContext } from "react";
 
-const API_URL = "http://localhost:3030/jsonstore";
+const API_URL = "http://localhost:3030/data";
 
 const Details = () => {
   const { storyId } = useParams();
   const navigate = useNavigate();
+  const user = useContext(userContext)[0];
+
   
   const [story, setStory] = useState({});
+
+  const isAuthor = story.authorId === user._id ? true : false;
 
   useEffect(() => {
     fetch(`${API_URL}/story/${storyId}`)
@@ -31,10 +37,10 @@ const Details = () => {
   return (
     <>
       <article className="content-section">
-        <img src="/images/default_pic.jpg" alt="img" height="55" width="55" />
+        <img src={story.authorAvatar} alt="img" height="55" width="55" />
         <div className="media-body">
           <div className="article-metadata">
-            <p>{story.author}</p>
+            <p>{story.authorName}</p>
             <small className="text-muted">{story.date}</small>
           </div>
           <h2 className="article-title">{story.title}</h2>
@@ -43,19 +49,19 @@ const Details = () => {
         <div className="article-description">
           <h3>{story.description}</h3>
         </div>
-        <section className="details-likes-dislikes">
+        {!isAuthor && <section className="details-likes-dislikes">
             <p >Likes: {story.likes}</p>
             <p >Dislikes: {story.dislikes}</p>
-          </section>
+          </section>}
       </article>
-      <div>
+      {isAuthor && <div>
         <Link className="btn" to={`/edit/${storyId}`}>
           Edit Story
         </Link>
         <button onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) deleteHandler()}} className="btn delete">
           Delete Story
         </button>
-      </div>
+      </div>}
     </>
   );
 };
