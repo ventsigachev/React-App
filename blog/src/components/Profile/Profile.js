@@ -5,9 +5,7 @@ import { useContext, useState } from "react";
 const Profile = () => {
   const userData = useContext(userContext)[0];
   const [picture, setPicture] = useState(userData.avatar);
-  const [username, setUsername] = useState(userData.username);
-  const [email, setEmail] = useState(userData.email);
-
+  
   const onChangePicture = e => {
     setPicture(URL.createObjectURL(e.target.files[0]));
   };
@@ -47,16 +45,6 @@ const Profile = () => {
             id="last_name"
             name="last_name"
             placeholder="Enter Your last name here"
-            required
-          />
-
-          <label htmlFor="username">Your Username</label>
-          <input
-            className="contactInput"
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Enter Your Username here"
             required
           />
 
