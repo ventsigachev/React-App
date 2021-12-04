@@ -12,7 +12,7 @@ const Profile = () => {
 
   return (
     <div className="profileContainer">
-      <h1 className="profileContainerTitle" >{userData.username} User Profile</h1>
+      <h1 className="profileContainerTitle" >User {userData.username} Profile</h1>
       <p>{userData.accessToken}</p>
       <p>{userData._id}</p>
       <form className="profileForm">

@@ -22,8 +22,8 @@ const Create = () => {
     const authorName = userData.username;
     const authorId = userData._id;
     const authorAvatar = userData.avatar;
-    const likes = 0;
-    const dislikes = 0;
+    const likes = [];
+    const dislikes = [];
     const date = moment().format("DD-MM-YYYY HH:mm");
 
     const story = { title, about, date, description, authorName, authorId, authorAvatar, likes, dislikes };

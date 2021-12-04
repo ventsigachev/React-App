@@ -13,8 +13,8 @@ const Details = () => {
   const user = useContext(userContext)[0]; 
   const [story, setStory] = useState({});
 
-  const [likes, setLikes] = useState(0);
-  const [dislikes, setDislikes] = useState(0)
+  const [likes, setLikes] = useState([]);
+  const [dislikes, setDislikes] = useState([])
 
   const isAuthor = story.authorId === user._id ? true : false;
 
@@ -23,6 +23,18 @@ const Details = () => {
       .then((res) => res.json())
       .then((data) => setStory(data));
   }, [storyId]);
+
+  useEffect(() => {
+    fetch(`${API_URL}/stories/${storyId}`, {
+      method: 'POST',
+      headers: {"Content-Type": "application-json",
+        "X-Authorization": user.accessToken}, 
+      body: JSON.stringify({...story, likes, dislikes})
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    
+  }, [story, user.accessToken, storyId, likes, dislikes])
 
   const deleteHandler = () => {
 
@@ -52,8 +64,8 @@ const Details = () => {
           <h3>{story.description}</h3>
         </div>
         {!isAuthor && <section className="details-likes-dislikes">
-            <p onClick={() => setLikes(prevLikes => prevLikes + 1)}>Likes: {likes}</p>
-            <p onClick={() => setDislikes(prevDislikes => prevDislikes - 1)}>Dislikes: {dislikes}</p>
+            <p onClick={() => setLikes(prevLikes => [...prevLikes, user._id])}>Likes: {likes.length}</p>
+            <p onClick={() => setDislikes(prevDislikes => [...prevDislikes, user._id])}>Dislikes: {dislikes.length}</p>
           </section>}
       </article>
       {isAuthor && <div>

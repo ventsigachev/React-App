@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Story = ({ story }) => {
 
+  console.log(story.likes)
+
 
   return (
     <article className="story content-section">
@@ -21,8 +23,8 @@ const Story = ({ story }) => {
         <div className="article-about">
           <p>{story.about}</p>
           <section className="likes-dislikes">
-            <i className="fas fa-thumbs-up">{story.likes}</i>
-            <i className="fas fa-thumbs-down">{story.dislikes}</i>
+            <i className="fas fa-thumbs-up">{story.likes.length}</i>
+            <i className="fas fa-thumbs-down">{story.dislikes.length}</i>
           </section>
         </div>
       </div>
