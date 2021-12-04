@@ -19,14 +19,14 @@ const Details = () => {
   const isAuthor = story.authorId === user._id ? true : false;
 
   useEffect(() => {
-    fetch(`${API_URL}/story/${storyId}`)
+    fetch(`${API_URL}/stories/${storyId}`)
       .then((res) => res.json())
       .then((data) => setStory(data));
   }, [storyId]);
 
   const deleteHandler = () => {
 
-    fetch(`${API_URL}/story/${storyId}`, {
+    fetch(`${API_URL}/stories/${storyId}`, {
       method: 'DELETE',
       headers: {"X-Authorization": user.accessToken} 
     })

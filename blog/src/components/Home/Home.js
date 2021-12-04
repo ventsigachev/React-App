@@ -5,17 +5,21 @@ import "./Home.css";
 const API_URL = "http://localhost:3030/data";
 
 const Home = () => {
-  const [story, setStory] = useState([]);
+  const [stories, setStories] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_URL}/story`)
+    fetch(`${API_URL}/stories`)
       .then((res) => res.json())
-      .then((data) => setStory(Object.values(data)));
+      .then((data) => {
+        
+        setStories(data)
+
+      });
   }, []);
 
-  return story.length > 0 ? (
+  return stories.length > 0 ? (
     <div className="story-list">
-      {story.map((story) => (
+      {stories.map((story) => (
         <Story key={story._id} story={story} />
       ))}
     </div>

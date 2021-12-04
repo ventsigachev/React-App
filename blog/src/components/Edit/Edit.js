@@ -19,7 +19,7 @@ const Edit = () => {
 
   useEffect(() => {
     const getStory = async () => {
-      const res = await fetch(`${API_URL}/story/${storyId}`);
+      const res = await fetch(`${API_URL}/stories/${storyId}`);
       const data = await res.json();
       setTitle(data.title);
       setAbout(data.about);
@@ -57,7 +57,7 @@ const Edit = () => {
     
     setIsPending(true);
 
-    fetch(`${API_URL}/story/${storyId}`, {
+    fetch(`${API_URL}/stories/${storyId}`, {
       method: "PUT",
       headers: { 
         "Content-Type": "application/json",

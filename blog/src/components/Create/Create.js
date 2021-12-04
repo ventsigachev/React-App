@@ -30,7 +30,7 @@ const Create = () => {
 
     setIsPending(true);
 
-    fetch(`${API_URL}/story`, {
+    fetch(`${API_URL}/stories`, {
 
         method: "POST",
         headers: { 
