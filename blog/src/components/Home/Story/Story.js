@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 
 const Story = ({ story }) => {
 
-  console.log(story.likes)
-
 
   return (
     <article className="story content-section">

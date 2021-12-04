@@ -26,9 +26,12 @@ const Details = () => {
 
   useEffect(() => {
     fetch(`${API_URL}/stories/${storyId}`, {
-      method: 'POST',
-      headers: {"Content-Type": "application-json",
+
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json",
         "X-Authorization": user.accessToken}, 
+        
       body: JSON.stringify({...story, likes, dislikes})
     })
     .then(res => res.json())
