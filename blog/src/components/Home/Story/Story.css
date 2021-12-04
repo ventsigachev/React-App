@@ -4,13 +4,14 @@
 .content-section {
   background: #ffffff;
   padding: 10px 20px;
-  border: 1px solid #dddddd;
   border-radius: 5px;
   margin-bottom: 20px;
 }
 
 .article-title {
   color: #444444;
+  font-family: "Comforter Brush";
+  font-size: 2em;
 }
 
 a.article-title:hover {
@@ -25,8 +26,10 @@ a.article-title:hover {
   align-items: center;
 }
 
-.article-author {
+.article-author-story {
   width: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .article-img {
@@ -39,12 +42,6 @@ a.article-title:hover {
   padding-bottom: 1px;
   margin-bottom: 4px;
   border-bottom: 1px solid #e3e3e3;
-}
-
-.article-metadata p:hover {
-  color: burlywood;
-  cursor: pointer;
-  text-decoration: none;
 }
 
 .likes-dislikes {

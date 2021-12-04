@@ -42,13 +42,13 @@ const Details = () => {
         <img src={story.authorAvatar} alt="img" height="55" width="55" />
         <div className="media-body">
           <div className="article-metadata">
-            <p>{story.authorName}</p>
+            <Link to="/profile" className="article-author-link"><p className="article-author">{story.authorName}</p></Link>
             <small className="text-muted">{story.date}</small>
           </div>
-          <h2 className="article-title">{story.title}</h2>
+          <h2 className="article-title-details">{story.title}</h2>
           <p className="article-content">{story.about}</p>
         </div>
-        <div className="article-description">
+        <div className="article-description-details">
           <h3>{story.description}</h3>
         </div>
         {!isAuthor && <section className="details-likes-dislikes">

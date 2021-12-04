@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+
+
 .content-section {
   background: #ffffff;
   padding: 10px 20px;
@@ -7,8 +10,11 @@
   height: auto;
 }
 
-.article-title {
+.article-title-details {
   color: #444444;
+  font-family: "Comforter Brush";
+  font-size: 3.5em;
+  font-weight: bolder;
 }
 .article-about {
   white-space: pre-line;
@@ -19,10 +25,23 @@
 
 .article-author {
   width: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #444444;  
+  font-weight: bold;
 }
 
-.article-description {
-  margin: 10px 0;
+.article-author:hover {
+  color: burlywood;
+  font-size: 1.2em;
+}
+
+.article-author-link {
+  text-decoration: none;
+}
+
+.article-description-details {
+  margin: 20px 0;
 }
 .article-img {
   height: 65px;
@@ -36,8 +55,7 @@
   border-bottom: 1px solid #e3e3e3;
 }
 
-.btn {
-  
+.btn {  
   color: white;
   padding: 12px 20px;
   border: none;

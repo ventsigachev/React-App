@@ -10,7 +10,7 @@ const Story = ({ story }) => {
       <img className="article-img" src={story.authorAvatar} alt="img" />
       <div className="story-body">
         <div className="article-metadata">
-          <p className="article-author">{story.authorName}</p>
+          <p className="article-author-story">{story.authorName}</p>
           <small className="text-muted">{story.date}</small>
         </div>
         <h2>
