@@ -9,7 +9,7 @@ export const componentGuard = (Component) => {
 
         const isUser = useContext(userContext)[0];
 
-        return isUser ?
+        return isUser.accessToken ?
         < Component {...props} />
         :
         <Navigate to="/login" />
