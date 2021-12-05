@@ -1,6 +1,7 @@
 import { componentGuard } from "../../auth/componentGuard";
 import { useState, useEffect, useContext } from "react";
 import Story from "../Home/Story/";
+import "./MyStories.css";
 import { userContext } from "../../auth/Authentication";
 
 const API_URL = "http://localhost:3030/data";
@@ -30,8 +31,8 @@ const MyStories = () => {
       ))}
     </div>
   ) : (
-    <div className="no-story">
-      <p>Hello, {name}! You have not written anything else!</p>
+    <div className="no-story myStory">
+      <p>Hello, {name}! You have not written anything else! Let's give a try!</p>
     </div>
   );
 };

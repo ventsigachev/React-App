@@ -25,7 +25,7 @@ const Home = () => {
       ))}
     </div>
   ) : (
-    <div className="no-story">
+    <div className="no-story home">
       <p>There are no stories to display</p>
     </div>
   );

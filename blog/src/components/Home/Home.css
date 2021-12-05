@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+
 .no-story {
     background: #ffffff;
     padding: 10px 20px;
@@ -5,4 +7,10 @@
     border-radius: 5px;
     margin-bottom: 20px;
     text-align: center;
+}
+
+.home {
+    font-family: "Comforter Brush";
+    font-size: 1.5em;
+    background-color: antiquewhite;
 }

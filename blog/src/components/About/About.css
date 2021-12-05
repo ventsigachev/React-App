@@ -1,4 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap");
+
 .about {
+    font-family: "Comforter Brush";
+    font-size: 1.5em;
     background-color: antiquewhite;
     color: #433F40;
     padding: 20px;
