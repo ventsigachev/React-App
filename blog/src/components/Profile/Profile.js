@@ -1,6 +1,7 @@
 import "./Profile.css";
 import { userContext } from "../../auth/Authentication";
 import { useContext, useState } from "react";
+import { componentGuard } from "../../auth/componentGuard";
 
 const Profile = () => {
   const userData = useContext(userContext)[0];
@@ -84,4 +85,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default componentGuard(Profile);
