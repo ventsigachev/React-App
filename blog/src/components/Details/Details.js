@@ -4,6 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { userContext } from "../../auth/Authentication";
 import { useContext } from "react";
+import { componentGuard } from "../../auth/componentGuard";
 
 const API_URL = "http://localhost:3030/data";
 
@@ -83,4 +84,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default componentGuard(Details);

@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import moment from "moment";
 import { userContext } from "../../auth/Authentication";
 import { useContext } from "react";
+import { componentGuard } from "../../auth/componentGuard";
 
 const API_URL = "http://localhost:3030/data";
 
@@ -110,4 +111,4 @@ const Edit = () => {
   );
 };
 
-export default Edit;
+export default componentGuard(Edit);

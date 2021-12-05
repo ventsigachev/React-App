@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Story from "./Story/Story";
 import "./Home.css";
+import { componentGuard } from "../../auth/componentGuard";
 
 const API_URL = "http://localhost:3030/data";
 
@@ -30,4 +31,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default componentGuard(Home);

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import moment from "moment";
 import { userContext } from "../../auth/Authentication";
 import { useContext } from "react";
+import { componentGuard } from "../../auth/componentGuard";
 
 
 const API_URL = "http://localhost:3030/data";
@@ -86,4 +87,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default componentGuard(Create);

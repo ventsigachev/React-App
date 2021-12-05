@@ -1,7 +1,10 @@
+import { componentGuard } from "../../auth/componentGuard";
+
+
 const MyStories = () => {
     return (
         <div>User Stories</div>
     )
 }
 
-export default MyStories;
+export default componentGuard(MyStories);
