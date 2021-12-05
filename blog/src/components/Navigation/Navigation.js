@@ -38,7 +38,7 @@ const Navigation = ({ user }) => {
         )}
         {isUser && (
           <li>
-            <Link to="/profile">Hello, {userData.username}!</Link>
+            <Link to="/profile">Hello, {userData.username.toUpperCase()}!</Link>
           </li>
         )}
         {isUser && (

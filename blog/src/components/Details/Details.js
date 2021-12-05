@@ -35,8 +35,8 @@ const Details = () => {
         
       body: JSON.stringify({...story, likes, dislikes})
     })
-    .then(res => res.json())
-    .then(data => console.log(data))
+    // .then(res => res.json())
+    // .then(data => console.log(data))
     
   }, [story, user.accessToken, storyId, likes, dislikes])
 

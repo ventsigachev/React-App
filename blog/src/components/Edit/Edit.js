@@ -36,8 +36,8 @@ const Edit = () => {
     const authorName = userData.username;
     const authorId = userData._id;
     const authorAvatar = userData.avatar;
-    const likes = 0;
-    const dislikes = 0;
+    const likes = [];
+    const dislikes = [];
     const date = moment().format("DD-MM-YYYY HH:mm");
     const _id = storyId;
     const _ownerId = authorId;
