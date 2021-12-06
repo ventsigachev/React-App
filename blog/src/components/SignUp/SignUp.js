@@ -37,9 +37,9 @@ const SignUp = () => {
   };
 
   const isThere = domains.some((d) => email.includes(d));
-  const avatar = "/images/default_pic.jpg";
+  // const avatar = "/images/default_pic.jpg";
 
-  const user = { username, email, password, avatar };
+  const user = { username, email, password };
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -69,7 +69,7 @@ const SignUp = () => {
 
       setErr(null);
       registerData(data);
-      setMessage("Congratulations! Your account has been created! You will be redirect to Profile Page!");
+      setMessage("Your account has been created! You will be redirect to Profile Page!");
       setTimeout(() => {
           navigate("/profile")
       }, 7000);
