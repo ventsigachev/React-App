@@ -16,6 +16,7 @@ ReactJS Project for SoftUni's Python Web Developer path.
 1. [Functional Project Description](#functional-project-description)
 1. [Used Technologies](#used-technologies)
 1. [Implemented Third Party API](#implemented-third-party-api)
+1. [Other](#other)
 
 <br></br>
 <br></br>
@@ -54,3 +55,16 @@ ReactJS Project for SoftUni's Python Web Developer path.
 
 ## Implemented Third Party API
 For sending Emails [EmailJS](https://www.emailjs.com/)
+
+<br></br>
+
+## Other
+In the Project are used also:
+- React Functional Components, with separate CSS files.
+- React Hooks
+- React HOC
+- Bound Forms
+- Form Data Validation
+- Error Handling
+- Synthetic Events
+- Context API
