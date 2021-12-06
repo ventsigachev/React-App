@@ -15,7 +15,7 @@ ReactJS Project for SoftUni's Python Web Developer path.
 1. [Brief Project Description](#brief-project-description)
 1. [Functional Project Description](#functional-project-description)
 1. [Used Technologies](#used-technologies)
-1. [Implemented Third Party's APIs](#implemented-third-party's-apis)
+1. [Implemented Third Party API](#implemented-third-party-api)
 
 <br></br>
 <br></br>
@@ -51,5 +51,5 @@ ReactJS Project for SoftUni's Python Web Developer path.
 
 <br></br>
 
-## Implemented Third Party's APIs
+## Implemented Third Party API
 For sending Emails [EmailJS](https://www.emailjs.com/)
