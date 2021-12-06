@@ -30,15 +30,15 @@ ReactJS Project for SoftUni's Python Web Developer path.
 ## Functional Project Description
 1. Public Part(Guest Part)
     1. Start Page - Welcome Site Page.
-    1. About Page - Unauthorized users may read site description.
-    1. Contact Page - Unauthorized users may send Email to site provider.
-    1. SignUp Page - Unauthorized users may register on the site.
-    1. SignIp Page - Unauthorized users may login in the site. 
+    1. About Page - Unauthenticated users may read site description.
+    1. Contact Page - Unauthenticated users may send Email to site provider.
+    1. SignUp Page - Unauthenticated users may register on the site.
+    1. SignIp Page - Unauthenticated users may login in the site. 
 <br></br>
 2. Private Part(Registered Users Only)
-    1. Home Page - Authorized Users may see and interact with all the stories on the site.
-    1. WriteStory Page - Authorized Users may create new stories.
-    1. MyStories Page - Authorized Users may see a list of and interact with their own stories.
+    1. Home Page - Authenticated Users may see and interact with all the stories on the site.
+    1. WriteStory Page - Authenticated Users may create new stories.
+    1. MyStories Page - Authenticated Users may see a list of and interact with their own stories.
     1. SignOut Page - After Confirmation the user is logged out.
 
 <br></br>
@@ -63,6 +63,7 @@ In the Project are used also:
 - React Functional Components, with separate CSS files.
 - React Hooks
 - React HOC
+- Unbound Forms
 - Bound Forms
 - Form Data Validation
 - Error Handling
