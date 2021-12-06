@@ -9,7 +9,7 @@ const PROFILE_API = "http://localhost:3030/data";
 
 const Profile = () => {
   const user = useContext(userContext)[0];
-  const [picture, setPicture] = useState("/images/default_pic.jpg");
+  const [picture, setPicture] = useState(null);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [country, setCountry] = useState("");
@@ -20,20 +20,27 @@ const Profile = () => {
   const [profileId, setProfileId] = useState(null);
   const [update, setUpdate] = useState(false);
 
+  if (!picture) setPicture("images/default_pic.jpg");
+
   useEffect(() => {
+    
     fetch(`${PROFILE_API}/profiles`)
       .then((res) => res.json())
       .then((data) => {
         if (!data.code) {
           const profile = data.filter((p) => p._ownerId === user._id)[0];
-          setPicture(profile.picture);
-          setFirstName(profile.fName);
-          setLastName(profile.lName);
-          setCountry(profile.country);
-          setAge(profile.age);
-          setInterests(profile.interests);
-          setProfileId(profile._id);
-          setUpdate(true);
+          if (profile) {
+
+            setPicture(profile.picture);
+            setFirstName(profile.fName);
+            setLastName(profile.lName);
+            setCountry(profile.country);
+            setAge(profile.age);
+            setInterests(profile.interests);
+            setProfileId(profile._id);
+            setUpdate(true);
+          }
+          
         }
       });
   }, [user]);
@@ -43,8 +50,8 @@ const Profile = () => {
   };
 
   const deleteHandler = () => {
-
-  } 
+    console.log("delete");
+  };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -68,13 +75,10 @@ const Profile = () => {
             "X-Authorization": user.accessToken,
           },
           body: JSON.stringify(profile),
-        })
-          // .then((res) => res.json())
-          // .then((data) => console.log(data));
-  
+        });
+
         setErrors(null);
         setMessage("Your Profile has been Created!");
-        
       }
 
       fetch(`${PROFILE_API}/profiles/${profileId}`, {
@@ -84,23 +88,19 @@ const Profile = () => {
           "X-Authorization": user.accessToken,
         },
         body: JSON.stringify(profile),
-      })
-        // .then((res) => res.json())
-        // .then((data) => console.log(data));
+      });
 
       setErrors(null);
       setMessage("Your Profile has been Updated!");
-
-
     } catch (error) {
       setErrors(error.message);
     }
   };
 
   return (
-    <>
+    
       <div className="profileContainer">
-        <h1 className="profileContainerTitle">User {user.username} Profile</h1>
+        <h1 className="profileContainerTitle"><span className="profileUsername">{user.username}</span> profile</h1>
         <p>{user.accessToken}</p>
         <p>{user._id}</p>
         <form className="profileForm" onSubmit={onSubmitHandler}>
@@ -168,23 +168,27 @@ const Profile = () => {
               onChange={(e) => setInterests(e.target.value)}
             ></textarea>
 
-            {!update && <button className="btn" type="submit">
-              Create
-            </button>}
+            {!update && (
+              <button className="btn" type="submit">
+                Create
+              </button>
+            )}
 
-            {update && <button className="btn" type="submit" >
-              Update
-            </button>}
-
-            {update && <button className="btn btnDelete" onClick={deleteHandler}>
-              Delete
-            </button>}
+            {update && (
+              <button className="btn" type="submit">
+                Update
+              </button>
+            )}
           </div>
         </form>
+        {update && (
+          <button className="btn btnDelete" onClick={deleteHandler}>
+            Delete
+          </button>
+        )}
         {message && <Success mes={message} />}
         {errors && <Errors message={errors} />}
-      </div>
-    </>
+      </div>    
   );
 };
 

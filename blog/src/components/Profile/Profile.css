@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap");
+
 .profileContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .profileContainerTitle {
@@ -30,11 +33,26 @@
 }
 
 .profileEmail {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
+    color: burlywood;
 }
 
 .btnDelete {
+    background-color: rgb(99, 2, 2);
+    position: absolute;
+    left: 200px;
+    top: 882px;
+}
+
+.btnDelete:hover {
     background-color: red;
 }
 
+.profileUsername {
+    color: burlywood;
+    font-family: "Comforter Brush";
+    font-size: 2.5em;
+    margin-right: 5px;
+
+}

@@ -10,17 +10,16 @@ const MyStories = () => {
   const user = useContext(userContext)[0];
   const [userStories, setUserStories] = useState([]);
 
-  const name = user.username.charAt(0).toUpperCase() + user.username.slice(1)
+  const name = user.username.charAt(0).toUpperCase() + user.username.slice(1);
 
   useEffect(() => {
     fetch(`${API_URL}/stories`)
       .then((res) => res.json())
       .then((data) => {
-
-        const uStories = data.filter((s) => s._ownerId === user._id);
-
-        setUserStories(uStories);
-
+        if (!data.code) {
+          const uStories = data.filter((s) => s._ownerId === user._id);
+          setUserStories(uStories);
+        }
       });
   }, [user]);
 
@@ -32,7 +31,9 @@ const MyStories = () => {
     </div>
   ) : (
     <div className="no-story myStory">
-      <p>Hello, {name}! You have not written anything else! Let's give a try!</p>
+      <p>
+        Sorry, {name}! You have not written anything else! Let's give a try!
+      </p>
     </div>
   );
 };
