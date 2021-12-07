@@ -9,28 +9,26 @@ const Home = () => {
   const [stories, setStories] = useState([]);
 
   useEffect(() => {
-
     fetch(`${API_URL}/stories`)
       .then((res) => res.json())
       .then((data) => {
         setStories(data);
       });
-
   }, []);
 
   return (
     <>
-      {stories.length > 0 ? 
-      <div className="story-list">
-        {stories.map((story) => (
-          <Story key={story._id} story={story} />
-        ))}
-      </div>
-      :
+      {stories.length > 0 ? (
+        <div className="story-list">
+          {stories.map((story) => (
+            <Story key={story._id} story={story} />
+          ))}
+        </div>
+      ) : (
         <div className="no-story home">
           <p>There are no stories to display</p>
         </div>
-      }
+      )}
     </>
   );
 };

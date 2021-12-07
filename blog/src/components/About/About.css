@@ -7,4 +7,9 @@
     color: #433F40;
     padding: 20px;
     border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.aboutSpan {
+    text-decoration: underline;
 }
