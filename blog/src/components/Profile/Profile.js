@@ -29,6 +29,7 @@ const Profile = () => {
       .then((data) => {
         if (!data.code) {
           const profile = data.filter((p) => p._ownerId === user._id)[0];
+
           if (profile) {
 
             setPicture(profile.picture);
@@ -68,6 +69,7 @@ const Profile = () => {
       const profile = { picture, fName, lName, country, age, interests };
 
       if (!update) {
+
         fetch(`${PROFILE_API}/profiles`, {
           method: "POST",
           headers: {
@@ -79,19 +81,21 @@ const Profile = () => {
 
         setErrors(null);
         setMessage("Your Profile has been Created!");
+
+      }else {
+        fetch(`${PROFILE_API}/profiles/${profileId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Authorization": user.accessToken,
+          },
+          body: JSON.stringify(profile),
+        });
+  
+        setErrors(null);
+        setMessage("Your Profile has been Updated!");
       }
-
-      fetch(`${PROFILE_API}/profiles/${profileId}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Authorization": user.accessToken,
-        },
-        body: JSON.stringify(profile),
-      });
-
-      setErrors(null);
-      setMessage("Your Profile has been Updated!");
+      
     } catch (error) {
       setErrors(error.message);
     }
