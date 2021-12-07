@@ -67,6 +67,7 @@ In the Project are used also:
 - Unbound Forms
 - Bound Forms
 - Form Data Validation
+- Controlled Components
 - Error Handling
 - Synthetic Events
 - Context API
