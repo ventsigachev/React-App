@@ -72,7 +72,7 @@ const SignUp = () => {
       setMessage("Your account has been created! You will be redirect to Profile Page!");
       setTimeout(() => {
           navigate("/profile")
-      }, 7000);
+      }, 3000);
 
     } catch (error) {
       
