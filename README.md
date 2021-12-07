@@ -23,7 +23,7 @@ ReactJS Project for SoftUni's Python Web Developer path.
 
 ## Brief Project Description
 
- As my First React Project, this is a Basic Blog Application, where users can share their stories. After register a user may see a list of all stories at Home Page. When a user click on the Story Title, of each story, the user will see the Details of the current story. If the user is owner of the story, may Edit or Delete it, otherwise may like or dislike the story. Other functionalities are easy available from NavBar.
+ As my First React Project, this is a Basic Blog Application, where users could share their stories. After register a user may see a list of all stories at Home Page. When a user clicks on the Story Title, the user will see the Details of the current story. If the user is owner of the story, may Edit or Delete it, otherwise may like or dislike the story. On Profile Page the user may interact with his/her personal data. Other functionalities are easy available from NavBar.
 
  <br></br>
 
@@ -39,6 +39,7 @@ ReactJS Project for SoftUni's Python Web Developer path.
     1. Home Page - Authenticated Users may see and interact with all the stories on the site.
     1. WriteStory Page - Authenticated Users may create new stories.
     1. MyStories Page - Authenticated Users may see a list of and interact with their own stories.
+    1. Profile Page - Authenticated Users may Create, Read, Update or Delete their profile.
     1. SignOut Page - After Confirmation the user is logged out.
 
 <br></br>
