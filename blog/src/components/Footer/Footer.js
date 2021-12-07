@@ -10,7 +10,7 @@ const Footer = () => {
         <nav>
           <i className="fab fa-facebook-square"></i>
           <i className="fab fa-linkedin"></i>
-          <i className="fas fa-envelope"></i>
+          <i class="fab fa-pinterest-square"></i>
           <i className="fab fa-github-square"></i>
         </nav>
       </div>

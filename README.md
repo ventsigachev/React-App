@@ -33,7 +33,7 @@ ReactJS Project for SoftUni's Python Web Developer path.
     1. About Page - Unauthenticated users may read site description.
     1. Contact Page - Unauthenticated users may send Email to site provider.
     1. SignUp Page - Unauthenticated users may register on the site.
-    1. SignIp Page - Unauthenticated users may login in the site. 
+    1. SignIp Page - Unauthenticated users may log in to the site.
 <br></br>
 2. Private Part(Registered Users Only)
     1. Home Page - Authenticated Users may see and interact with all the stories on the site.
