@@ -33,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <>
+    <section className="contact">
       <div>
         {message && <Success mes={message} />}
         {errors && <Errors mes={errors} />}
@@ -111,7 +111,7 @@ const Contact = () => {
           Send Email
         </button>
       </form>
-    </>
+    </section>
   );
 };
 
