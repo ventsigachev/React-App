@@ -68,6 +68,8 @@ In the Project are used also:
 - Bound Forms
 - Form Data Validation
 - Controlled Components
+- Stateless Components
+- Stateful Components
 - Error Handling
 - Synthetic Events
 - Context API
