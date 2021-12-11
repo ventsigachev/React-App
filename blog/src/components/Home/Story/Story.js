@@ -5,13 +5,15 @@ import { useState, useEffect } from "react";
 import { userContext } from "../../../auth/Authentication";
 import { useContext } from "react";
 import * as likeService from "../../../services/likeService";
+import * as dislikeService from "../../../services/dislikeService";
+
 
 const Story = ({ story }) => {
 
   const storyId = story._id;
   const user = useContext(userContext)[0];
   const [likes, setLikes] = useState(0);
-
+  const [dislikes, setDislikes] = useState(0);
 
   useEffect(() => {
     likeService.getStoryLikes(user, storyId).then((data) => {
@@ -19,6 +21,17 @@ const Story = ({ story }) => {
       if (!data.code) {
         const l = data.map((x) => x.userId);
         setLikes(l.length);
+
+      }
+    });
+  }, [user, storyId]);
+
+  useEffect(() => {
+    dislikeService.getStoryDislikes(user, storyId).then((data) => {
+
+      if (!data.code) {
+        const d = data.map((x) => x.userId);
+        setDislikes(d.length);
 
       }
     });
@@ -41,7 +54,7 @@ const Story = ({ story }) => {
           <p>{story.about}</p>
           <section className="likes-dislikes">
             <i className="fas fa-thumbs-up">{likes}</i>
-            <i className="fas fa-thumbs-down">{story.dislikes.length}</i>
+            <i className="fas fa-thumbs-down">{dislikes}</i>
           </section>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import "./Details.css";
 import * as likeService from "../../services/likeService";
+import * as dislikeService from "../../services/dislikeService";
 
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -30,8 +31,18 @@ const Details = () => {
 
       if (!data.code) {
         const l = data.map((x) => x.userId);
-        // console.log(l);
         setLikes((prevLikes) => [...prevLikes, ...l]);
+
+      }
+    });
+  }, [user, storyId]);
+
+  useEffect(() => {
+    dislikeService.getStoryDislikes(user, storyId).then((data) => {
+
+      if (!data.code) {
+        const d = data.map((x) => x.userId);
+        setDislikes((prevDislikes) => [...prevDislikes, ...d]);
 
       }
     });
@@ -46,7 +57,16 @@ const Details = () => {
     });
   };
 
-  const dislikesHandler = () => {};
+  const dislikesHandler = () => {
+
+    dislikeService.dislike(user, storyId).then((res) => {
+      if (res.ok) {
+        setDislikes((prevLikes) => [...prevLikes, user._id]);
+      }
+      res.json();
+    });
+
+  };
 
   const deleteHandler = () => {
     fetch(`${API_URL}/stories/${storyId}`, {
