@@ -28,22 +28,18 @@ const Details = () => {
 
   useEffect(() => {
     likeService.getStoryLikes(user, storyId).then((data) => {
-
       if (!data.code) {
         const l = data.map((x) => x.userId);
         setLikes((prevLikes) => [...prevLikes, ...l]);
-
       }
     });
   }, [user, storyId]);
 
   useEffect(() => {
     dislikeService.getStoryDislikes(user, storyId).then((data) => {
-
       if (!data.code) {
         const d = data.map((x) => x.userId);
         setDislikes((prevDislikes) => [...prevDislikes, ...d]);
-
       }
     });
   }, [user, storyId]);
@@ -58,14 +54,12 @@ const Details = () => {
   };
 
   const dislikesHandler = () => {
-
     dislikeService.dislike(user, storyId).then((res) => {
       if (res.ok) {
         setDislikes((prevLikes) => [...prevLikes, user._id]);
       }
       res.json();
     });
-
   };
 
   const deleteHandler = () => {
@@ -83,9 +77,7 @@ const Details = () => {
         <img src={story.authorAvatar} alt="img" height="55" width="55" />
         <div className="media-body">
           <div className="article-metadata">
-            <Link to="/profile" className="article-author-link">
-              <p className="article-author">{story.authorName}</p>
-            </Link>
+            <p className="article-author">{story.authorName}</p>
             <small className="text-muted">{story.date}</small>
           </div>
           <h2 className="article-title-details">{story.title}</h2>

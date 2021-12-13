@@ -31,15 +31,6 @@
   font-weight: bold;
 }
 
-.article-author:hover {
-  color: burlywood;
-  font-size: 1.2em;
-}
-
-.article-author-link {
-  text-decoration: none;
-}
-
 .article-description-details {
   margin: 20px 0;
 }

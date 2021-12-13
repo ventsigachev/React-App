@@ -4,6 +4,7 @@ import Success from "../../notifications/Success";
 import { userContext } from "../../auth/Authentication";
 import { useContext, useState, useEffect } from "react";
 import { componentGuard } from "../../auth/componentGuard";
+import { useNavigate } from "react-router-dom";
 
 const PROFILE_API = "http://localhost:3030/data";
 
@@ -19,6 +20,7 @@ const Profile = () => {
   const [message, setMessage] = useState(null);
   const [profileId, setProfileId] = useState(null);
   const [update, setUpdate] = useState(false);
+  const navigate = useNavigate();
 
   if (!picture) setPicture("images/default_pic.jpg");
 
@@ -51,7 +53,13 @@ const Profile = () => {
   };
 
   const deleteHandler = () => {
-    console.log("delete");
+    // console.log("delete");
+    fetch(`${PROFILE_API}/profiles/${profileId}`, {
+      method: "DELETE",
+      headers: { "X-Authorization": user.accessToken },
+    }).then(() => {
+      navigate("/home");
+    });
   };
 
   const onSubmitHandler = (e) => {
@@ -186,7 +194,10 @@ const Profile = () => {
           </div>
         </form>
         {update && (
-          <button className="btn btnDelete" onClick={deleteHandler}>
+          <button className="btn btnDelete" onClick={() => {
+            if (window.confirm("Are you sure you wish to delete this item?"))
+              deleteHandler();
+          }}>
             Delete
           </button>
         )}
