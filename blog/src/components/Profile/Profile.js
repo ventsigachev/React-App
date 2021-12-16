@@ -112,9 +112,8 @@ const Profile = () => {
   return (
     
       <div className="profileContainer">
-        <h1 className="profileContainerTitle"><span className="profileUsername">{user.username}</span> profile</h1>
-        <p>{user.accessToken}</p>
-        <p>{user._id}</p>
+        <h1 className="profileContainerTitle"><span className="profileUsername">{user.username}'s</span> profile</h1>
+       
         <form className="profileForm" onSubmit={onSubmitHandler}>
           <div className="profilePicture">
             <img src={picture} alt="avatar" className="profileImg" />
